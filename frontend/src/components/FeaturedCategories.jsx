@@ -3,8 +3,8 @@ import '../Styles/FeaturedCategories.css';
 import { Link } from 'react-router-dom';
 
 // Import images
-import jacketImg1 from '../assets/P_img50.png';
-import jacketImg2 from '../assets/P_img51.png';
+import jacketImg1 from '../assets/p_img50.png';
+import jacketImg2 from '../assets/p_img51.png';
 import jacketImg3 from '../assets/p_img52.png';
 
 const products = [
