@@ -1,0 +1,115 @@
+/* List.css */
+
+/* Container */
+.list-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+}
+
+/* Title */
+.list-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1f2937;
+  text-align: center;
+}
+
+/* Header row */
+.list-header {
+  display: grid;
+  grid-template-columns: 100px 2fr 1fr 1fr 1fr;
+  gap: 10px;
+  font-weight: 600;
+  padding: 10px 0;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.list-header b {
+  display: block;
+}
+
+/* List item */
+.list-item {
+  display: grid;
+  grid-template-columns: 100px 2fr 1fr 1fr 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.product-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Action buttons */
+.product-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.action-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+  color: #fff;
+}
+
+.remove-btn {
+  background-color: #ef4444;
+}
+
+.remove-btn:hover {
+  background-color: #dc2626;
+}
+
+.edit-btn {
+  background-color: #2563eb;
+}
+
+.edit-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .list-header,
+  .list-item {
+    grid-template-columns: 80px 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 5px;
+  }
+
+  .list-header b:nth-child(3),
+  .list-header b:nth-child(4),
+  .list-header b:nth-child(5),
+  .list-item p:nth-child(3),
+  .list-item p:nth-child(4),
+  .product-actions {
+    grid-column: 1 / -1;
+  }
+
+  .product-actions {
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 5px;
+  }
+
+  .product-img {
+    width: 60px;
+    height: 60px;
+  }
+}

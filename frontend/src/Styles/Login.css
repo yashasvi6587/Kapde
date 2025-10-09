@@ -1,0 +1,216 @@
+/* 🩶 Base Setup */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f5f5, #dcdcdc);
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* ✨ Floating particles background */
+.login-container::before,
+.login-container::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,0,0,0.1), transparent 60%);
+  animation: float 8s ease-in-out infinite alternate;
+}
+
+.login-container::after {
+  top: -200px;
+  right: -200px;
+  animation-delay: 2s;
+}
+.login-container::before {
+  bottom: -200px;
+  left: -200px;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-20px); }
+}
+
+/* 🩶 Login Form */
+.login-form {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  padding: 40px 30px;
+  text-align: center;
+  color: #000;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease forwards;
+}
+
+.login-form h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.login-form hr {
+  border: none;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+}
+
+/* 🧊 Inputs */
+.login-form input {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #000;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  transform: scale(1.01);
+}
+
+/* 🔁 Password Toggle */
+.login-form div > span {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  color: #333;
+  margin-left: 10px;
+  transition: 0.3s;
+}
+.login-form div > span:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* 🩵 Signup Grid */
+.signup-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .signup-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 🌈 Form Footer */
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.form-footer p {
+  font-size: 13px;
+  color: #444;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-footer p:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* 🖤 Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  background: linear-gradient(135deg, #000, #444);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.4), transparent);
+  transition: left 0.4s ease;
+}
+
+.submit-btn:hover::before {
+  left: 100%;
+}
+.submit-btn:hover {
+  transform: scale(1.03);
+}
+
+/* ⚪ Google Button */
+.google-login {
+  margin-top: 20px;
+}
+
+.google-signin-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #fff, #eaeaea);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.4s ease;
+}
+
+.google-signin-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #f5f5f5, #dcdcdc);
+}
+
+.google-icon {
+  width: 22px;
+  height: 22px;
+} 
+
+.signgoogle {
+  font-size: 15px;
+  font-weight: 500;
+  color: #111;
+}
+
+/* 🎞 Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

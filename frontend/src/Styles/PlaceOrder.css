@@ -1,0 +1,99 @@
+/* Container */
+.place-order-form {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+/* Cards for sections */
+.card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Section Titles */
+.card h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+/* Input grid */
+.input-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem 2rem;
+}
+
+.input-grid input {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+/* Payment options */
+.payment-method {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.payment-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.payment-option:hover {
+  border-color: #3b82f6;
+}
+
+.payment-option p.selected {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #3b82f6;
+  margin-bottom: 0.5rem;
+}
+
+/* Place order button */
+.place-order-btn {
+  background: #3b82f6;
+  color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  margin-top: 1rem;
+  transition: all 0.2s;
+}
+
+.place-order-btn:hover {
+  background: #2563eb;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .input-grid {
+    grid-template-columns: 1fr;
+  }
+  .payment-method {
+    flex-direction: column;
+  }
+}

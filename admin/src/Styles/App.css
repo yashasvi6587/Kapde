@@ -1,0 +1,75 @@
+/* App.css */
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* ToastContainer override (optional) */
+.Toastify__toast {
+  font-size: 14px;
+}
+
+/* Admin App Wrapper */
+.admin-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f3f4f6; /* light gray background */
+}
+
+/* Divider */
+.divider {
+  border: 0;
+  border-top: 1px solid #d1d5db;
+  margin: 0;
+}
+
+/* Layout with sidebar + content */
+.admin-layout {
+  display: flex;
+  flex: 1;
+  min-height: calc(100vh - 60px); /* assuming navbar ~60px height */
+}
+
+/* Sidebar already styled separately, so just ensure flex shrink */
+.admin-layout aside {
+  flex-shrink: 0;
+}
+
+/* Content area */
+.admin-content {
+  flex: 1;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+/* Navbar placeholder styling */
+.navbar {
+  height: 60px;
+  background-color: #1f2937; /* dark navbar */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  color: #fff;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+
+  .admin-content {
+    padding: 15px;
+  }
+
+  .navbar {
+    padding: 0 10px;
+    height: 50px;
+  }
+}

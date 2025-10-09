@@ -1,0 +1,108 @@
+.trending-wrapper {
+  background: linear-gradient(135deg, #000000, #121212);
+  color: #fff;
+  padding: 80px 8%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: background 1s ease-in-out;
+}
+
+.trending-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+  animation: pulse 5s infinite alternate;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); opacity: 0.6; }
+  to { transform: scale(1.1); opacity: 0.8; }
+}
+
+.trending-title {
+  font-size: 3rem;
+  letter-spacing: 4px;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #fff, #999);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.trending-header {
+  max-width: 650px;
+  margin: 0 auto 60px auto;
+  z-index: 1;
+  position: relative;
+}
+
+.trending-desc {
+  color: #ccc;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.trending-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  z-index: 1;
+  position: relative;
+}
+
+.trending-item {
+  background: linear-gradient(180deg, #1a1a1a, #000);
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.trending-item:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+}
+
+.trending-badge {
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #fff, #aaa);
+  color: #000;
+  padding: 6px 16px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-top: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.trending-badge:hover {
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .trending-title {
+    font-size: 2rem;
+  }
+  .trending-desc {
+    font-size: 1rem;
+  }
+  .trending-grid {
+    gap: 25px;
+  }
+}

@@ -1,0 +1,175 @@
+/* ---------- Global Container ---------- */
+.place-order-page {
+  background: linear-gradient(135deg, #fdfdfd, #eaeaea);
+  min-height: 100vh;
+  padding: 3rem 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  transition: background 0.6s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ---------- Form Layout ---------- */
+.place-order-form {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 10px 45px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  transition: all 0.6s ease;
+}
+
+/* ---------- Card ---------- */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background: linear-gradient(145deg, #ffffff, #f3f3f3);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Inputs ---------- */
+.card input {
+  width: 100%;
+  padding: 0.9rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 0.95rem;
+  transition: all 0.4s ease;
+  background: #fff;
+}
+
+.card input:focus {
+  border-color: #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Payment Section ---------- */
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  border-radius: 14px;
+  padding: 1rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.payment-option img {
+  height: 40px;
+}
+
+.payment-option:hover {
+  background: #000;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.payment-option p.selected {
+  width: 18px;
+  height: 18px;
+  border: 3px solid #000;
+  border-radius: 50%;
+  background: #000;
+}
+
+/* ---------- Button ---------- */
+.place-order-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 40px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: all 0.4s ease;
+  font-size: 1rem;
+}
+
+.place-order-btn:hover {
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Title Styling ---------- */
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #111;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background: #000;
+  bottom: -6px;
+  left: 0;
+  border-radius: 2px;
+}
+
+/* ---------- Animation ---------- */
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.place-order-form {
+  animation: fadeSlide 0.8s ease forwards;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 950px) {
+  .place-order-form {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .card input {
+    font-size: 0.9rem;
+  }
+  .title {
+    font-size: 1.3rem;
+  }
+  .place-order-btn {
+    width: 100%;
+  }
+}

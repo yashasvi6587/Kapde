@@ -1,0 +1,286 @@
+.product-page {
+  padding: 30px 60px;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+/* --- Layout --- */
+.product-layout {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* --- Left Images --- */
+.product-images {
+  display: flex;
+  gap: 15px;
+  flex: 1;
+  min-width: 280px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.thumbnail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.thumbnail {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.thumbnail.active,
+.thumbnail:hover {
+  border: 2px solid #000;
+  opacity: 1;
+}
+
+.main-image img {
+  width: 380px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+/* --- Right Info --- */
+.product-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.product-info h1 {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.rating img {
+  width: 20px;
+}
+
+.review-text {
+  font-weight: 500;
+  color: #333;
+  margin-left: 5px;
+}
+
+/* --- Price --- */
+.price-section {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.current-price {
+  font-size: xx-large;
+  font-weight: 700;
+  color: #111;
+}
+
+.old-price {
+  font-size: 36px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.discount {
+  font-size: 28px;
+  font-weight: 600;
+  color: #e53935;
+}
+
+/* --- Size --- */
+.size-section {
+  margin: 15px 0;
+}
+
+.size-section .bold {
+  font-weight: 600;
+}
+
+.size-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.size-options button {
+  border: 1px solid #aaa;
+  background: #fff;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.size-options button.active,
+.size-options button:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* --- Actions --- */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.add-cart {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #111;
+  color: #fff;
+  border: none;
+}
+
+.add-cart:hover {
+  background: #000;
+  transform: scale(1.03);
+}
+
+/* --- Policies --- */
+.policies {
+  margin-top: 10px;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* --- Extra Section --- */
+.extra-section {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.extra-section h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.extra-section p {
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .product-page {
+    padding: 20px 30px;
+  }
+
+  .main-image img {
+    width: 340px;
+  }
+
+  .product-info h1 {
+    font-size: 22px;
+  }
+
+  .current-price {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-layout {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .product-images {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .thumbnail-list {
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .thumbnail {
+    width: 70px;
+    height: 70px;
+  }
+
+  .main-image img {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .product-info {
+    text-align: center;
+  }
+
+  .size-options {
+    justify-content: center;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+
+  .add-cart {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-page {
+    padding: 15px;
+  }
+
+  .breadcrumb {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .product-info h1 {
+    font-size: 20px;
+  }
+
+  .current-price {
+    font-size: 20px;
+  }
+
+  .old-price {
+    font-size: 13px;
+  }
+
+  .extra-section h2 {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,65 @@
+/* --- SECTION STYLING --- */
+.bestseller-section {
+  padding: 60px 20px;
+  background: linear-gradient(120deg, #fefefe, #f5f5f5);
+  text-align: center;
+  overflow: hidden;
+}
+
+.bestseller-header {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+.bestseller-description {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 10px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+/* --- GRID STYLING --- */
+.bestseller-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 20px 0;
+}
+
+/* --- PRODUCT WRAPPER ANIMATIONS --- */
+.product-wrapper {
+  transform: translateY(30px);
+  opacity: 0;
+  animation: fadeInUp 0.8s forwards;
+}
+
+.product-wrapper:nth-child(1) { animation-delay: 0.1s; }
+.product-wrapper:nth-child(2) { animation-delay: 0.2s; }
+.product-wrapper:nth-child(3) { animation-delay: 0.3s; }
+.product-wrapper:nth-child(4) { animation-delay: 0.4s; }
+.product-wrapper:nth-child(5) { animation-delay: 0.5s; }
+.product-wrapper:nth-child(6) { animation-delay: 0.6s; }
+.product-wrapper:nth-child(7) { animation-delay: 0.7s; }
+.product-wrapper:nth-child(8) { animation-delay: 0.8s; }
+.product-wrapper:nth-child(9) { animation-delay: 0.9s; }
+.product-wrapper:nth-child(10){ animation-delay: 1s; }
+
+/* --- FADE + UP ANIMATION --- */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* --- RESPONSIVE TYPOGRAPHY --- */
+@media (max-width: 768px) {
+  .bestseller-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bestseller-description {
+    font-size: 0.9rem;
+  }
+}

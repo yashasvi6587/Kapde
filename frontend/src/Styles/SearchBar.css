@@ -1,0 +1,111 @@
+.searchbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(135deg, #000, #111);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: background 0.8s ease;
+}
+
+.searchbar-container.light {
+  background: linear-gradient(135deg, #fff, #f3f3f3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.searchbar-inner {
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 5px 20px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 25px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  transition: all 0.4s ease;
+}
+
+.searchbar-inner:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 30px rgba(255, 255, 255, 0.2);
+}
+
+.searchbar-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 12px 15px;
+  font-size: 1rem;
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.searchbar-container.light .searchbar-input {
+  color: #111;
+}
+
+.searchbar-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.searchbar-container.light .searchbar-input::placeholder {
+  color: rgba(0,0,0,0.5);
+}
+
+.search-icon {
+  width: 22px;
+  height: 22px;
+  margin-left: 10px;
+  cursor: pointer;
+  filter: invert(100%);
+  transition: filter 0.3s ease;
+}
+
+.searchbar-container.light .search-icon {
+  filter: invert(0%);
+}
+
+.cross-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 15px;
+  cursor: pointer;
+  filter: invert(100%);
+  transition: filter 0.3s ease;
+}
+
+.searchbar-container.light .cross-icon {
+  filter: invert(0%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .searchbar-inner {
+    max-width: 90%;
+    padding: 5px 15px;
+  }
+
+  .searchbar-input {
+    font-size: 0.95rem;
+  }
+
+  .search-icon, .cross-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .searchbar-inner {
+    padding: 5px 12px;
+  }
+}

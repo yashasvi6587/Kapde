@@ -1,0 +1,157 @@
+.about-container {
+  font-family: "Poppins", sans-serif;
+  padding: 40px 20px;
+  text-align: center;
+  color: #222;
+  background: linear-gradient(to bottom, #fafafa, #f0f0f0);
+}
+
+/* Hero */
+.about-hero {
+  padding: 60px 20px;
+  background: url('https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1600&q=80')
+    no-repeat center/cover;
+  color: white;
+  border-radius: 12px;
+  animation: fadeIn 2s ease-in-out;
+  filter: grayscale(100%);
+}
+.about-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+}
+.tagline {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.tagline span {
+  color: #fafaf8;
+  font-weight: bold;
+}
+
+/* Story */
+.about-story {
+  margin: 50px auto;
+  max-width: 800px;
+  line-height: 1.7;
+}
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  position: relative;
+}
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #090909;
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+.about-story span {
+  color: #747372;
+  font-weight: bold;
+}
+
+/* Vision & Mission */
+.vision-mission {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 60px 0;
+  flex-wrap: wrap;
+}
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.card h3 {
+  margin-bottom: 10px;
+  color: black;
+  font-size: 1.5rem;
+}
+
+/* Team */
+.about-team {
+  margin: 50px auto;
+}
+.team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  
+}
+.team-member {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 220px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+}
+.team-member img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+.team-member:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+.team-member h4 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+}
+.team-member p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* CTA */
+.about-cta {
+  margin: 80px 0 40px;
+}
+.cta-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #555555, black); /* black to white gradient */
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  background: linear-gradient(135deg, #ded3d3, #dddddd); /* darker to lighter on hover */
+  transform: scale(1.05);
+  color: black;
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeIn 1.5s ease-in-out; }
+.slide-up { animation: fadeIn 1.8s ease-in-out; }
+.slide-left { animation: fadeIn 2s ease-in-out; }
+.slide-right { animation: fadeIn 2.2s ease-in-out; }
+.zoom-in { animation: fadeIn 2.4s ease-in-out; }
+.hover-pop:hover { transform: scale(1.1); }
+
