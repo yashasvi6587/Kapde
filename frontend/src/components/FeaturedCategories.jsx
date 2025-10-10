@@ -11,7 +11,7 @@ const products = [
   {
     title: 'Family',
     description:
-      'Explore the fascinating history behind every piece in this unique collection. Each item is a conversation starter, perfect for those who appreciate a story as much as they appreciate quality craftsmanship. Unlock a deeper understanding of the world with every purchase.',
+      'Explore the fascinating history behind every piece in this unique collection. Each item is a conversation starter, perfect for those who appreciate a story as much as they appreciate quality craftsmanship. ',
     image: jacketImg1,
     cta: 'Discover Now',
   },
@@ -25,7 +25,7 @@ const products = [
   {
     title: 'Casual',
     description:
-      'This fascinating wall art brings a touch of modern abstraction to any space. Its intricate patterns and dynamic colors will captivate every guest. Add this unique masterpiece to your home and make a truly unforgettable statement.',
+      'This amazing wall art brings a touch of modern abstraction to any space. Its intricate patterns & dynamic colors will captivate every guest. Add this unique product to your home & make a truly unforgettable statement.',
     image: jacketImg3,
     cta: 'Discover Now',
   },
@@ -48,8 +48,7 @@ const FeaturedCategories = () => {
         <h2 className="main-headline">New Collections</h2>
         <p className="main-description">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptas ut
-          dolorum consequuntur, adipisci repellat! Eveniet commodi voluptatem voluptate,
-          eum minima, in suscipit explicabo voluptatibus harum, quibusdam ex repellat eaque!
+          dolorum consequuntur.
         </p>
       </div>
 
