@@ -83,21 +83,26 @@ const Navbar = () => {
             />
           )}
 
-          <div className="profile-cart" ref={dropdownRef}>
-            <span className="profile-text" onClick={handleProfileClick}>
+          <div className="profile-cart">
+            <span
+              className="profile-text"
+              onClick={() => {
+                if (!token) {
+                  navigate('/login');
+                } else {
+                  logout();
+                }
+              }}
+            >
               {token ? 'Logout' : 'Login'}
             </span>
+
             <Link to="/cart" className="cart-icon">
               <img src={assets.cart_icon} alt="Cart" />
               {getCartCount() > 0 && <span className="cart-count">{getCartCount()}</span>}
             </Link>
-
-            {token && showDropdown && (
-              <div className="dropdown-menu">
-                <p onClick={logout}>Logout</p>
-              </div>
-            )}
           </div>
+
 
           <img
             src={assets.menu_icon}

@@ -83,6 +83,8 @@ import freedom from "./freedom.jpg"
 import brotherhood from "./brotherhood.jpg"
 import laprage from "./laprage.jpg"
 import empty_cart from "./empty_cart.png"
+import women from "./women.avif"
+import testimonial2 from "./testimonial1.webp"
 
 
 export const assets = {
@@ -118,7 +120,9 @@ export const assets = {
     freedom,
     brotherhood,
     empty_cart,
-    p_img31
+    p_img31,
+    women,
+    testimonial2,
 }
 
 

@@ -1,23 +1,24 @@
 import React from "react";
 import "../Styles/Testimonials.css";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import { assets } from "../assets/assets.js";
 
 const testimonialsData = [
   {
     name: "Ananya Sharma",
     review: "Absolutely love the quality of the clothes! Fast delivery and excellent service.",
-    img: "https://randomuser.me/api/portraits/women/68.jpg"
+    img: assets.women,
   },
   {
     name: "Rohit Verma",
     review: "Great experience shopping here. Easy returns and amazing collection!",
-    img: "https://randomuser.me/api/portraits/men/45.jpg"
+    img: "https://randomuser.me/api/portraits/men/45.jpg",
   },
   {
     name: "Priya Singh",
     review: "Stylish clothes at affordable prices. Highly recommended!",
-    img: "https://randomuser.me/api/portraits/women/65.jpg"
-  }
+    img: assets.testimonial2,
+  },
 ];
 
 const Testimonials = () => {
