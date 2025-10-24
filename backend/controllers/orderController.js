@@ -4,6 +4,7 @@ import Stripe from "stripe";
 import razorpay from "razorpay";
 import shiprocketService from "../services/shipping/shiprocketService.js";
 import { mapOrderToShiprocket } from "../utils/shiprocketMapper.js";
+import crypto from "crypto";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -189,11 +190,19 @@ const createShipment = async (req, res) => {
 // ✅ Webhook for Shipment
 const shipmentWebhook = async (req, res) => {
   try {
-    const payload = req.body;
+    const payload = JSON.stringify(req.body);
+    const signature = req.headers['x-shiprocket-signature'];
     const providerOrderId = payload.order_id || payload.shipment_id;
     const awb = payload.awb || payload.awb_number;
     const status = payload.current_status || payload.status || payload.event;
+    const expected = crypto
+    .createHmac('sha256', process.env.SHIPROCKET_WEBHOOK_SECRET)
+    .update(payload)
+    .digest('hex');
 
+  if (signature !== expected) {
+    return res.status(401).json({ success: false, msg: 'Invalid signature' });
+  }
     const order = await orderModel.findOne({
       $or: [{ "shipment.providerOrderId": providerOrderId }, { "shipment.awb": awb }],
     });

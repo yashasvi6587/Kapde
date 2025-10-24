@@ -163,31 +163,63 @@
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
-    height: auto;
-    padding: 20px;
+    height: auto; /* allow auto height */
+    padding: 20px 10px;
   }
-  .hero-left, .hero-right {
+
+  /* Stack left, center, right */
+  .hero-left,
+  .hero-center,
+  .hero-right {
     max-width: 100%;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    position: relative; /* remove absolute positioning */
   }
+
+  .hero-right {
+    order: 3; /* make sure it comes after center content */
+  }
+
+  /* Hero-bottom should come after all content */
+  .hero-bottom {
+    position: relative; /* was absolute before */
+    bottom: auto;
+    margin-top: 20px;
+    padding: 0 10px;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .hero-bottom p {
+    flex: unset; /* allow each paragraph to take its own line */
+    margin: 5px 0;
+  }
+
   .brand-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    letter-spacing: 3px;
   }
+
   .hero-tagline {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+    padding: 0 5px;
   }
+
   .hero-buttons {
     flex-direction: column;
     gap: 10px;
+    width: 100%;
   }
+
   .hero-btn {
     width: 100%;
   }
-  .hero-bottom {
-    flex-direction: column;
-    gap: 8px;
-    font-size: 0.8rem;
+
+  .social-links ul li {
+    font-size: 0.75rem;
   }
 }
 

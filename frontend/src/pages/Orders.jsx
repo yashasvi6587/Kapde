@@ -8,7 +8,6 @@ import { toast } from 'react-toastify'
 const Orders = () => {
   const { backendUrl, token, currency } = useContext(ShopContext)
   const [orderData, setOrderData] = useState([])
-  const [userDetails, setUserDetails] = useState(null)
 
   const loadOrderData = async () => {
     try {
@@ -39,35 +38,17 @@ const Orders = () => {
     }
   }
 
-  const loadUserDetails = async () => {
-    try {
-      const response = await axios.get(backendUrl + '/api/user/profile', {
-        headers: { token }
-      })
-      if (response.data.success) {
-        setUserDetails(response.data.data)
-      }
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  
 
   useEffect(() => {
     if (token) {
       loadOrderData()
-      loadUserDetails()
     }
   }, [token])
 
   return (
     <div className="orders-page">
-      {userDetails && (
-        <div className="welcome-box">
-          <h3>Welcome back, {userDetails.firstname} {userDetails.lastname}</h3>
-          <p className="subtitle">This is where your story lives.</p>
-          <div className="user-mark">✨ Your Mark</div>
-        </div>
-      )}
+    
 
       <Title text1="YOUR" text2="ORDERS" />
 

@@ -10,19 +10,19 @@ const Orders = ({ token }) => {
   const [orders, setOrders] = useState([])
 
   // admin/src/pages/OrderDetail.jsx (snippet)
-  const createShipment = async () => {
-    try {
-      const { data } = await axios.post(`${backendUrl}/api/order/shipment/${orders._id}`, {}, {
-        headers: { token: adminToken }
-      });
-      if (data.success) {
-        toast.success("Shipment created");
-        // refresh order data
-      }
-    } catch (err) {
-      toast.error(err.response?.data?.msg || err.message);
+  const createShipment = async (orderId) => {
+  try {
+    const { data } = await axios.post(`${backendUrl}/api/order/shipment/${orderId}`, {}, {
+      headers: { token }
+    });
+    if (data.success) {
+      toast.success("Shipment created");
+      fetchAllOrders(); // refresh order list
     }
-  };
+  } catch (err) {
+    toast.error(err.response?.data?.msg || err.message);
+  }
+};
 
   // render:
 
@@ -99,11 +99,16 @@ const Orders = ({ token }) => {
                   <option value="Delivered">Delivered</option>
                 </select>
               </div>
+              <button 
+        className="btn" 
+        onClick={() => createShipment(order._id)}
+      >
+        Create Shipment
+      </button>
             </div>
           ))
         }
       </div>
-      <button onClick={createShipment} className="btn">Create Shipment</button>
     </div>
   )
 }

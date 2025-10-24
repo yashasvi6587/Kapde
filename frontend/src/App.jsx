@@ -17,7 +17,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import Verify from './pages/Verify'
 import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
-import OrderPlace from './pages/OrderPlace'
 import ShippingPolicy from './pages/ShippingPolicy'
 import RefundPolicy from './pages/RefundPolicy'
 import TermsAndConditions from './pages/TermsAndConditions'
