@@ -10,7 +10,7 @@ const Footer = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    formData.append("access_key", "153e8aa2-9751-49ad-8c4b-cb6bfb25c592");
+    formData.append("access_key", "f5395a9d-c7c1-49ca-8268-83397f536770");
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
@@ -43,7 +43,7 @@ const Footer = () => {
 
         {/* Logo & Description */}
         <div className="footer-section about">
-          <p className="footer-logo">KAPDA</p>
+          <p className="footer-logo">KAPDE</p>
           <p className="footer-desc">
             Fashion that moves with you. Explore our exclusive collections and feel the difference.
           </p>
@@ -57,10 +57,10 @@ const Footer = () => {
             <Link to="/collection"><li onClick={() => window.scrollTo(0, 0)}>All Collections</li></Link>
             <Link to="/about"><li onClick={() => window.scrollTo(0, 0)}>About Us</li></Link>
             <Link to="/contact"><li onClick={() => window.scrollTo(0, 0)}>Contact Us</li></Link>
-            <Link to="/shipping-policy"><li onClick={() => window.scrollTo(0, 0)}>Shipping Policy</li></Link>
+            {/* <Link to="/shipping-policy"><li onClick={() => window.scrollTo(0, 0)}>Shipping Policy</li></Link>
             <Link to="/refund-policy"><li onClick={() => window.scrollTo(0, 0)}>Refund Policy</li></Link>
             <Link to="/privacy-policy"><li onClick={() => window.scrollTo(0, 0)}>Privacy Policy</li></Link>
-            <Link to="/termsandconditions"><li onClick={() => window.scrollTo(0, 0)}>Terms And Conditions</li></Link>
+            <Link to="/termsandconditions"><li onClick={() => window.scrollTo(0, 0)}>Terms And Conditions</li></Link> */}
           </ul>
         </div>
 
@@ -77,17 +77,17 @@ const Footer = () => {
             </li>
             <li>
               <FaEnvelope className="footer-icon"/>
-              <span>kapda@gmail.com</span>
+              <span>kapde5678@gmail.com</span>
             </li>
             <li>
               <FaUserTie className="footer-icon"/>
               <span>We’re always looking for passionate individuals. Reach out to join our journey!</span>
             </li>
             <li className="social-icons">
-              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"><FaWhatsapp/></a>
+              <a href="https://wa.me/+918826271392" target="_blank" rel="noopener noreferrer"><FaWhatsapp/></a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram/></a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter/></a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><FaYoutube/></a>
+              {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter/></a> */}
+              {/* <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><FaYoutube/></a> */}
             </li>
           </ul>
         </div>
@@ -107,7 +107,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="footer-bottom">
-        © 2025 Kapda.com – All Rights Reserved.
+        © 2025 kapde.store – All Rights Reserved.
       </div>
     </div>
   );

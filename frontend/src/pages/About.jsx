@@ -56,18 +56,18 @@ const About = () => {
         <h2 className="section-title">Meet Our Crew</h2>
         <div className="team-grid">
           <div className="team-member hover-pop">
-            <img src={assets.p_img31} alt="Founder" />
-            <h4>Arjun Sharma</h4>
+            {/* <img src={assets.p_img31} alt="Founder" /> */}
+            <h4>Vaibhav </h4>
             <p>Founder & Visionary</p>
           </div>
           <div className="team-member hover-pop">
-            <img src={assets.p_img31} alt="Designer" />
-            <h4>Sneha Verma</h4>
+            {/* <img src={assets.p_img31} alt="Designer" /> */}
+            <h4>Gulshan</h4>
             <p>Creative Designer</p>
           </div>
           <div className="team-member hover-pop">
-            <img src={assets.p_img31} alt="Marketing" />
-            <h4>Rohit Singh</h4>
+            {/* <img src={assets.p_img31} alt="Marketing" /> */}
+            <h4>Mayur</h4>
             <p>Marketing Head</p>
           </div>
         </div>
