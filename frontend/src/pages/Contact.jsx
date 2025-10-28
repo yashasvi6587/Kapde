@@ -58,7 +58,7 @@ const Contact = () => {
           <div className="icon"><FaPhoneAlt /></div>
           <div>
             <p className="info-title">Tel & Email</p>
-            <p>Tel: (+91) 88262 71392 <br /> Email: kapde5678@gmail.com</p>
+            <p>Tel: (+91) 88262 71392 <br /> Email: Storekapde@gmail.com</p>
           </div>
         </div>
 

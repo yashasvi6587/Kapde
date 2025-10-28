@@ -2,6 +2,7 @@ import React from "react";
 import "../Styles/Hero.css";
 import { assets } from "../assets/assets.js";
 import { Link } from "react-router-dom";
+import { FaWhatsapp, FaInstagram } from 'react-icons/fa';
 
 const Hero = () => {
   return (
@@ -22,11 +23,11 @@ const Hero = () => {
         <div className="social-links">
           <p>Social Community :</p>
           <ul>
-            <li>INSTAGRAM</li>
-            <li>YOUTUBE</li>
-            <li>WHATS APP</li>
+            <li> <a href="https://wa.me/+918826271392" target="_blank" rel="noopener noreferrer">WHATS APP</a></li>
+            {/* <li>YOUTUBE</li> */}
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">INSTAGRAM</a></li>
           </ul>
-          <p className="phone">+81 (3) 1234-1234</p>
+          <p className="phone">+91 - 8826271392</p>
         </div>
       </div>
 

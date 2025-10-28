@@ -61,7 +61,13 @@
   margin-bottom: 6px;
   cursor: pointer;
   transition: color 0.3s;
+  
 }
+.social-links ul li a{
+  text-decoration: none;
+  color: #fff;
+}
+
 .social-links ul li:hover {
   color: #ff4b2b;
 }

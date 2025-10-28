@@ -77,7 +77,7 @@ const Footer = () => {
             </li>
             <li>
               <FaEnvelope className="footer-icon"/>
-              <span>kapde5678@gmail.com</span>
+              <span>Storekapde@gmail.com</span>
             </li>
             <li>
               <FaUserTie className="footer-icon"/>

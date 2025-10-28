@@ -16,7 +16,7 @@ const testimonialsData = [
   },
   {
     name: "Priya Singh",
-    review: "Stylish clothes at affordable prices. Highly recommended! I found it incredibly easy to manage",
+    review: "Stylish clothes at affordable prices. I found it incredibly easy to manage",
     img: assets.testimonial2,
   },
 ];
