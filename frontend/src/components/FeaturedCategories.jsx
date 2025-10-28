@@ -3,9 +3,9 @@ import '../Styles/FeaturedCategories.css';
 import { Link } from 'react-router-dom';
 
 // Import images
-import jacketImg1 from '../assets/p_img50.png';
-import jacketImg2 from '../assets/p_img51.png';
-import jacketImg3 from '../assets/p_img52.png';
+import jacketImg1 from '../assets/feeling.png';
+import jacketImg2 from '../assets/plain.png';
+import jacketImg3 from '../assets/casual.png';
 
 const products = [
   {
@@ -47,8 +47,7 @@ const FeaturedCategories = () => {
       <div className="collections-header">
         <h2 className="main-headline">New Collections</h2>
         <p className="main-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptas ut
-          dolorum consequuntur.
+          New drops that speak louder than words. Designed to turn heads, built to last.A new wave of color, comfort, and quiet confidence. This is where simplicity meets soul.
         </p>
       </div>
 
@@ -66,7 +65,7 @@ const FeaturedCategories = () => {
               <h3>{product.title}</h3>
               <p>{product.description}</p>
               <div className="category-links">
-                {['Family', 'Plain', 'Casual'].map((cat) => (
+                {['Feelings', 'Plain', 'Casual'].map((cat) => (
                   <Link key={cat} to={`/collection?subCategory=${encodeURIComponent(cat)}`}>
                     <span className={`feature-link ${cat === product.title ? 'active-feature' : ''}`}>{cat}</span>
                   </Link>

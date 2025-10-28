@@ -48,7 +48,7 @@ const Hero = () => {
 
       {/* Right Content */}
       <div className="hero-right">
-        {['Half Cut', 'Full Sleeves', 'Black', 'White'].map((cat) => (
+        {['White', 'Black', 'Coloured'].map((cat) => (
                     <div key={cat}>
                       <Link to={`/collection?category=${encodeURIComponent(cat)}`}>
                         <p className="features">{cat}</p>

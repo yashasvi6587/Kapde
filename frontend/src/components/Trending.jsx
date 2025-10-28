@@ -34,7 +34,7 @@ export default function Trending() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <p className="trending-desc">
-          Our hottest picks just for you. Discover top-selling gems that define the season's style.
+          Inspired by energy, purpose, and presence — each piece is a reminder to wear your truth with devotion.
         </p>
       </motion.div>
 

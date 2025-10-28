@@ -116,7 +116,7 @@ const Navbar = () => {
       {/* Category Navbar */}
       <div className="category-navbar">
         <div className="category-group">
-          {['Family', 'Plain', 'Casual'].map((item) => (
+          {['Feelings', 'Plain', 'Casual'].map((item) => (
             <div key={item}>
               <Link to={`/collection?subCategory=${encodeURIComponent(item)}`}>
                 <p className="category-item">{item}</p>
@@ -126,7 +126,7 @@ const Navbar = () => {
         </div>
 
         <div className="category-group">
-          {['Half Cut', 'Full Sleeves', 'Black', 'White'].map((cat) => (
+          {['White', 'Black', 'Coloured' ].map((cat) => (
             <div key={cat}>
               <Link to={`/collection?category=${encodeURIComponent(cat)}`}>
                 <p className="category-item">{cat}</p>

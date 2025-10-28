@@ -85,6 +85,9 @@ import laprage from "./laprage.jpg"
 import empty_cart from "./empty_cart.png"
 import women from "./women.avif"
 import testimonial2 from "./testimonial1.webp"
+import feeling from "./feeling.png"
+import casual from "./casual.png"
+import plain from "./plain.png"
 
 
 export const assets = {
@@ -123,6 +126,9 @@ export const assets = {
     p_img31,
     women,
     testimonial2,
+    feeling,
+    plain,
+    casual
 }
 
 

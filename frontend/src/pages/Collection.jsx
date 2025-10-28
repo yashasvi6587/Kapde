@@ -76,8 +76,8 @@ const Collection = () => {
         <h3>Filter</h3>
 
         <div className="filter-section">
-          <p>Categories</p>
-          {['Half Cut', 'Full Sleeves', 'Black', 'White'].map((cat, index) => (
+          <p>Type</p>
+          {['White', 'Black', 'Coloured'].map((cat, index) => (
             <label key={index}>
               <input
                 type="checkbox"
@@ -91,8 +91,8 @@ const Collection = () => {
         </div>
 
         <div className="filter-section">
-          <p>Type</p>
-          {['Family', 'Plain', 'Casual'].map((type, index) => (
+          <p>Categories</p>
+          {['Feelings', 'Plain', 'Casual'].map((type, index) => (
             <label key={index}>
               <input
                 type="checkbox"

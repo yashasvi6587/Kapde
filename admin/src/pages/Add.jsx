@@ -20,8 +20,8 @@ const Add = ({ token }) => {
   const [cutprice, setCutprice] = useState(product ? product.cutprice : "");
   const [star, setStar] = useState(product ? product.star : "");
   const [rating, setRating] = useState(product ? product.rating : "");
-  const [category, setCatgeory] = useState(product ? product.category : "Half Cut");
-  const [subCategory, setSubCategory] = useState(product ? product.subCategory : "Family");
+  const [category, setCatgeory] = useState(product ? product.category : "White");
+  const [subCategory, setSubCategory] = useState(product ? product.subCategory : "Feelings");
   const [bestseller, setBestseller] = useState(product ? product.bestseller : false);
   const [sizes, setSizes] = useState(product ? product.sizes : []);
 
@@ -126,19 +126,19 @@ const Add = ({ token }) => {
         <div>
           <p>Category</p>
           <select onChange={(e) => setCatgeory(e.target.value)} value={category}>
-            <option value="Half Cut">Half Cut</option>
-            <option value="Full Sleeves">Full Sleeves</option>
-            <option value="Black">Black</option>
             <option value="White">White</option>
+            <option value="Black">Black</option>
+            <option value="Coloured">Coloured</option>
+            {/* <option value="Full Sleeves">Full Sleeves</option> */}
           </select>
         </div>
 
         <div>
           <p>Sub Category</p>
           <select onChange={(e) => setSubCategory(e.target.value)} value={subCategory}>
+            <option value="Feelings">Feelings</option>
             <option value="Plain">Plain</option>
             <option value="Casual">Casual</option>
-            <option value="Family">Family</option>
           </select>
         </div>
       </div>

@@ -68,6 +68,11 @@ const Product = () => {
         {/* RIGHT : Info */}
         <div className="product-info">
           <h1>{productData.name}</h1>
+          {productData.description && (
+            <div className="description-section">
+              <p>{productData.description}</p>
+            </div>
+          )}
 
           <div className="rating">
             {renderStars(productData.rating)}
@@ -118,6 +123,8 @@ const Product = () => {
             <p><strong>✓</strong> Cash on Delivery Available</p>
             <p><strong>✓</strong> Easy Return & Exchange within 7 Days</p>
           </div>
+          
+
         </div>
       </div>
 
