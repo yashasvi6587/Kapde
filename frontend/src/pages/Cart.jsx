@@ -5,6 +5,8 @@ import { assets } from '../assets/assets'
 import CartTotal from '../components/CartTotal'
 import { useNavigate } from 'react-router-dom'
 import '../Styles/Cart.css'
+import CartOfferBanner from '../components/CartOfferBanner';
+
 
 const Cart = () => {
   const { token, products, currency, cartItems, updateQuantity } = useContext(ShopContext)
@@ -98,6 +100,8 @@ const Cart = () => {
               )
             })}
           </div>
+          <CartOfferBanner totalItems={cartData.reduce((sum, i) => sum + i.quantity, 0)} />
+
 
           <div className="checkout-section zoom-in">
             <CartTotal />

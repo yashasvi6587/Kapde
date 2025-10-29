@@ -14,7 +14,7 @@ const sendResetEmail = async ({ to, resetUrl }) => {
   const info = await transporter.sendMail({
     from: process.env.EMAIL_FROM,
     to,
-    subject: "Password reset — Exitt",
+    subject: "Password reset — Kapde",
     html: `
       <p>Hi,</p>
       <p>You requested a password reset. Click the link below to reset your password. This link expires in 1 hour.</p>
