@@ -17,7 +17,7 @@ const About = () => {
       <div className="about-story">
         <h2 className="section-title">Our Story</h2>
         <p className="fade-in">
-          At <span>KAPDA</span>, we believe fashion is not just about wearing
+          At <span>KAPDE</span>, we believe fashion is not just about wearing
           clothes—it’s about wearing your identity. Our journey started with a
           simple vision: <span>blend comfort, class, and creativity</span>.
         </p>

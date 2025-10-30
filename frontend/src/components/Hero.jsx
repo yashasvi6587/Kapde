@@ -23,11 +23,11 @@ const Hero = () => {
         <div className="social-links">
           <p>Social Community :</p>
           <ul>
-            <li> <a href="https://wa.me/+918826271392" target="_blank" rel="noopener noreferrer">WHATS APP</a></li>
+            <li> <a href="https://wa.me/+919456009776" target="_blank" rel="noopener noreferrer">WHATS APP</a></li>
             {/* <li>YOUTUBE</li> */}
-            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">INSTAGRAM</a></li>
+            <li><a href="https://www.instagram.com/kapde.storeofficial?igsh=MXh5cGxqcXVtN2t1eA==" target="_blank" rel="noopener noreferrer">INSTAGRAM</a></li>
           </ul>
-          <p className="phone">+91 - 8826271392</p>
+          <p className="phone">+91 - 9456009776</p>
         </div>
       </div>
 

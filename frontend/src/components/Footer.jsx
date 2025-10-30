@@ -43,7 +43,15 @@ const Footer = () => {
 
         {/* Logo & Description */}
         <div className="footer-section about">
-          <p className="footer-logo">KAPDE</p>
+          <div className="footer-logo">
+            <img
+              src={assets.logo}
+              alt="Kapde Logo"
+              className="footer-logo-img"
+            />
+            <span>KAPDE</span>
+          </div>
+
           <p className="footer-desc">
             Fashion that moves with you. Explore our exclusive collections and feel the difference.
           </p>
@@ -69,23 +77,23 @@ const Footer = () => {
           <p className="footer-heading">GET IN TOUCH</p>
           <ul>
             <li>
-              <FaMapMarkerAlt className="footer-icon"/>
+              <FaMapMarkerAlt className="footer-icon" />
               <span>
                 Sahibabad, Ghaziabad<br />
                 201005, Uttar Pradesh, India
               </span>
             </li>
             <li>
-              <FaEnvelope className="footer-icon"/>
+              <FaEnvelope className="footer-icon" />
               <span>Storekapde@gmail.com</span>
             </li>
             <li>
-              <FaUserTie className="footer-icon"/>
+              <FaUserTie className="footer-icon" />
               <span>We’re always looking for passionate individuals. Reach out to join our journey!</span>
             </li>
             <li className="social-icons">
-              <a href="https://wa.me/+918826271392" target="_blank" rel="noopener noreferrer"><FaWhatsapp/></a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram/></a>
+              <a href="https://wa.me/+919456009776" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
+              <a href="https://www.instagram.com/kapde.storeofficial?igsh=MXh5cGxqcXVtN2t1eA==" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
               {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter/></a> */}
               {/* <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><FaYoutube/></a> */}
             </li>
@@ -96,9 +104,9 @@ const Footer = () => {
         <div className="footer-section form">
           <p className="footer-heading">SEND A MESSAGE</p>
           <form onSubmit={onSubmit}>
-            <input type="text" name="name" placeholder="Name" required/>
-            <input type="email" name="email" placeholder="Email" required/>
-            <textarea name="message" placeholder="Message" rows="4" required/>
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <textarea name="message" placeholder="Message" rows="4" required />
             <button type="submit">Send</button>
           </form>
         </div>

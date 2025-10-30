@@ -48,7 +48,15 @@ const Navbar = () => {
 
       {/* Main Navbar */}
       <div className="main-navbar">
-        <Link to="/" className="logo">KAPDE</Link>
+        <Link to="/" className="logo">
+          <img
+            src={assets.logo}
+            alt="Kapde Logo"
+            className="logo-img"
+          />
+          KAPDE
+        </Link>
+
 
         {/* Desktop Links */}
         <ul className="nav-links">
@@ -126,7 +134,7 @@ const Navbar = () => {
         </div>
 
         <div className="category-group">
-          {['White', 'Black', 'Coloured' ].map((cat) => (
+          {['White', 'Black', 'Coloured'].map((cat) => (
             <div key={cat}>
               <Link to={`/collection?category=${encodeURIComponent(cat)}`}>
                 <p className="category-item">{cat}</p>

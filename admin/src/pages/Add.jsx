@@ -155,7 +155,7 @@ const Add = ({ token }) => {
         </div>
         <div>
           <p>Star ⭐</p>
-          <input value={star} onChange={(e) => setStar(e.target.value)} type="number" min="0" max="5" step="0.1" placeholder="4.5" />
+          <input value={star} onChange={(e) => setStar(e.target.value)} type="number" min="0" max="10" step="0.1" placeholder="4.5" />
         </div>
         <div>
           <p>Rating Count</p>

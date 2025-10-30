@@ -58,7 +58,7 @@ const Contact = () => {
           <div className="icon"><FaPhoneAlt /></div>
           <div>
             <p className="info-title">Tel & Email</p>
-            <p>Tel: (+91) 88262 71392 <br /> Email: Storekapde@gmail.com</p>
+            <p>Tel: (+91) 94560 09776 <br /> Email: Storekapde@gmail.com</p>
           </div>
         </div>
 
@@ -69,8 +69,8 @@ const Contact = () => {
             <p>We’re always looking for passionate individuals. Reach out to join our journey!</p>
             {/* <button className="join-btn">Join Us</button> */}
             <div className="social-links">
-              <a href="https://wa.me/+918826271392" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+              <a href="https://wa.me/+919456009776" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
+              <a href="https://www.instagram.com/kapde.storeofficial?igsh=MXh5cGxqcXVtN2t1eA==" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
               {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a> */}
               {/* <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><FaYoutube /></a> */}
             </div>

@@ -227,3 +227,19 @@
     padding: 12px;
   }
 }
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #f5f4f4;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo-img {
+  width: 38px; /* adjust if needed */
+  height: 38px;
+  object-fit: contain;
+}

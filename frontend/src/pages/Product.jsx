@@ -31,7 +31,7 @@ const Product = () => {
   const renderStars = (rating) => {
     const fullStars = Math.floor(rating)
     const stars = []
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 10; i=i+2) {
       if (i < fullStars) stars.push(<img key={i} src={assets.star_icon} alt="star" />)
       else stars.push(<img key={i} src={assets.star_dull_icon} alt="star" />)
     }
