@@ -1,28 +1,26 @@
-import nodemailer from "nodemailer";
-
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT || 587),
-  secure: process.env.SMTP_SECURE === "true", // true for 465
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
+import axios from "axios";
 
 const sendResetEmail = async ({ to, resetUrl }) => {
-  const info = await transporter.sendMail({
-    from: process.env.EMAIL_FROM,
-    to,
-    subject: "Password reset — Kapde",
-    html: `
-      <p>Hi,</p>
-      <p>You requested a password reset. Click the link below to reset your password. This link expires in 1 hour.</p>
-      <p><a href="${resetUrl}">Reset password</a></p>
-      <p>If you didn't request this, ignore this email.</p>
-    `,
-  });
-  return info;
+  try {
+    await axios.post("https://api.resend.com/emails", {
+      from: "Kapde <onboarding@resend.dev>",
+      to,
+      subject: "Password reset — Kapde",
+      html: `
+        <p>Hi,</p>
+        <p>You requested a password reset. Click below to reset your password.</p>
+        <a href="${resetUrl}">Reset password</a>
+        <p>If you didn't request this, ignore this email.</p>
+      `,
+    }, {
+      headers: {
+        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      },
+    });
+  } catch (error) {
+    console.error("Resend email error:", error.response?.data || error.message);
+    throw new Error("Failed to send email");
+  }
 };
 
-export {sendResetEmail}
+export { sendResetEmail };

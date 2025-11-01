@@ -45,34 +45,43 @@ export default function Trending() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
-        {bestSeller.map((item, index) => (
-          <motion.div
-            key={item._id}
-            className="trending-item"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 250 }}
-          >
-            <ProductItem
-              id={item._id}
-              image={item.image}
-              name={item.name}
-              price={item.price}
-              cutprice={item.cutprice}
-              description={item.description}
-              star={item.star}
-              rating={item.rating}
-            />
+        {bestSeller.length > 0 ? (
+          bestSeller.map((item, index) => (
             <motion.div
-              className="trending-badge"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.05, duration: 0.5 }}
+              key={item._id}
+              className="trending-item"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 250 }}
             >
-              🔥 Trending
+              <ProductItem
+                id={item._id}
+                image={item.image}
+                name={item.name}
+                price={item.price}
+                cutprice={item.cutprice}
+                description={item.description}
+                star={item.star}
+                rating={item.rating}
+              />
+              <motion.div
+                className="trending-badge"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.05, duration: 0.5 }}
+              >
+                🔥 Trending
+              </motion.div>
             </motion.div>
-          </motion.div>
-        ))}
+          ))
+        ) : (
+          <div className="loading">
+            <p className="loading-text">
+              Loading<span className="dots"></span>
+            </p>
+          </div>
+        )}
       </motion.div>
+
     </section>
   );
 }

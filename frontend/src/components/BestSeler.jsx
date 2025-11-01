@@ -25,21 +25,30 @@ const BestSeler = () => {
 
       {/* Product Grid */}
       <div className="bestseller-grid">
-        {bestSeller.map((item, index) => (
-          <div className="product-wrapper" key={item._id}>
-            <ProductItem
-              id={item._id}
-              image={item.image}
-              name={item.name}
-              price={item.price}
-              cutprice={item.cutprice}
-              description={item.description}
-              star={item.star}
-              rating={item.rating}
-            />
+        {bestSeller.length > 0 ? (
+          bestSeller.map((item) => (
+            <div className="product-wrapper" key={item._id}>
+              <ProductItem
+                id={item._id}
+                image={item.image}
+                name={item.name}
+                price={item.price}
+                cutprice={item.cutprice}
+                description={item.description}
+                star={item.star}
+                rating={item.rating}
+              />
+            </div>
+          ))
+        ) : (
+          <div className="loading">
+            <p className="loading-text">
+              Loading<span className="dots"></span>
+            </p>
           </div>
-        ))}
+        )}
       </div>
+
     </section>
   )
 }

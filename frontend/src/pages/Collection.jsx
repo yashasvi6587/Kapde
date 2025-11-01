@@ -60,14 +60,14 @@ const Collection = () => {
   }, [sortType]);
 
   useEffect(() => {
-  const params = new URLSearchParams(location.search);
-  const categoryParam = params.get('category');
-  const subCategoryParam = params.get('subCategory');
+    const params = new URLSearchParams(location.search);
+    const categoryParam = params.get('category');
+    const subCategoryParam = params.get('subCategory');
 
-  if (categoryParam) setCategory([categoryParam]);
-  if (subCategoryParam) setSubCategory([subCategoryParam]);
-  // eslint-disable-next-line
-}, [location.search]);
+    if (categoryParam) setCategory([categoryParam]);
+    if (subCategoryParam) setSubCategory([subCategoryParam]);
+    // eslint-disable-next-line
+  }, [location.search]);
 
 
   return (
@@ -133,9 +133,10 @@ const Collection = () => {
               </div>
             ))
           ) : (
-            <div className="no-products">
-              <p>No products found 😔</p>
+            <div className="loading">
+              <p className="loading-text">Loading<span className="dots"></span></p>
             </div>
+
           )}
         </div>
       </main>
