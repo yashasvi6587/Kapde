@@ -3,7 +3,7 @@ export function mapOrderToShiprocket(order) {
   return {
     order_id: order._id.toString(),
     order_date: new Date(order.date).toISOString(),
-    pickup_location: "Primary", // Shiprocket dashboard me define karna padega
+    pickup_location: "work", // Shiprocket dashboard me define karna padega
     channel_id: "",
     comment: "Order via Website",
 
