@@ -160,7 +160,7 @@ const PlaceOrder = () => {
             "firstName",
             "lastName",
             "email",
-            "street",
+            "address",
             "city",
             "state",
             "zipCode",

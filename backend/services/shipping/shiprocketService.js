@@ -36,4 +36,29 @@ async function getTracking(providerOrderId) {
   return res.data;
 }
 
-export default { auth, createOrder, getTracking };
+// ✅ Get shipping rates (all options)
+ async function getShippingRates(pincode, weight = 1) {
+  const token = await auth();
+  const res = await axios.get(`${BASE}/courier/serviceability/`, {
+    params: {
+      pickup_postcode: 201301, // tumhara pickup code
+      delivery_postcode: 201005,
+      cod: 0,
+      weight,
+    },
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  const available = res.data.data?.available_courier_companies || [];
+  // instead of reducing to one, send all back
+  return available.map(c => ({
+    id: c.courier_company_id,
+    name: c.courier_name,
+    rate: c.rate,
+    mode: c.mode,
+    etd: c.estimated_delivery_days,
+  }));
+}
+
+
+export default { auth, createOrder, getTracking,getShippingRates };

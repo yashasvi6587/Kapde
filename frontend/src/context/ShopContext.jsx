@@ -8,7 +8,7 @@ export const ShopContext = createContext()
 
 const ShopContextProvider = (props) => {
     const currency = "₹"
-    const delivery_fee = 1
+    // const delivery_fee = 1
     const backendUrl = import.meta.env.VITE_BACKEND_URL
     const [search, setSearch] = useState('')
     const [showSearch, setShowSearch] = useState(false)
@@ -17,6 +17,12 @@ const ShopContextProvider = (props) => {
     const [token, setToken] = useState('')
 
     const navigate = useNavigate()
+
+    const delivery_fee=99;
+
+
+
+
     const addToCart = async (itemId, size) => {
         if (!size) {
             toast.error('Select Product Size')

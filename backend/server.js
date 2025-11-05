@@ -7,6 +7,7 @@ import userRouter from "./routes/userRoute.js";
 import productRouter from "./routes/productRoute.js";
 import cartRouter from './routes/cartRoute.js';
 import orderRouter from './routes/orderRoute.js';
+import shippingRouter from "./routes/shippingRoute.js";
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -14,6 +15,8 @@ connectDb();
 connectCloudinary()
 app.use(cors());
 app.use(express.json());
+app.use("/api/shipping", shippingRouter);
+
 app.use('/api/user',userRouter)
 app.use('/api/product',productRouter)
 app.use('/api/cart',cartRouter)

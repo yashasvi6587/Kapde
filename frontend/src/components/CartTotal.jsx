@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext,useEffect } from 'react';
 import { ShopContext } from '../context/ShopContext';
 import Title from './Title';
 import '../Styles/CartTotal.css';
@@ -6,9 +6,14 @@ import '../Styles/CartTotal.css';
 const CartTotal = () => {
   const { currency, delivery_fee, getCartAmount } = useContext(ShopContext);
   const subtotal = getCartAmount() || 0;
+
+  // 🔹 assume userAddress context ya prop se milta hai
+
+
   const shipping = subtotal === 0 ? 0 : delivery_fee;
   const discount = subtotal > 1000 ? subtotal * 0.1 : 0;
   const total = subtotal - discount + shipping;
+  
 
   return (
     <div className="cart-total-container">

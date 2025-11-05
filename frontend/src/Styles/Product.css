@@ -295,3 +295,45 @@
 .description-section p {
   white-space: pre-line;
 }
+/* Premium background gradient */
+.premium-gradient {
+  background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
+  animation: gradientShift 6s ease-in-out infinite alternate;
+}
+
+@keyframes gradientShift {
+  0% { background: linear-gradient(135deg, #fdfcfb, #e2d1c3); }
+  100% { background: linear-gradient(135deg, #e0eafc, #cfdef3); }
+}
+
+/* Color Circles */
+.color-section {
+  margin: 15px 0;
+}
+
+.color-options {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.color-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.color-circle.black { background: black; }
+.color-circle.white { background: white; border: 1px solid #ccc; }
+.color-circle.red { background: red; }
+.color-circle.green { background: green; }
+
+.color-circle.active {
+  border: 2px solid #111;
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
