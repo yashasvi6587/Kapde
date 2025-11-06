@@ -65,11 +65,28 @@ const Footer = () => {
             <Link to="/collection"><li onClick={() => window.scrollTo(0, 0)}>All Collections</li></Link>
             <Link to="/about"><li onClick={() => window.scrollTo(0, 0)}>About Us</li></Link>
             <Link to="/contact"><li onClick={() => window.scrollTo(0, 0)}>Contact Us</li></Link>
-            {/* <Link to="/shipping-policy"><li onClick={() => window.scrollTo(0, 0)}>Shipping Policy</li></Link>
-            <Link to="/refund-policy"><li onClick={() => window.scrollTo(0, 0)}>Refund Policy</li></Link>
-            <Link to="/privacy-policy"><li onClick={() => window.scrollTo(0, 0)}>Privacy Policy</li></Link>
-            <Link to="/termsandconditions"><li onClick={() => window.scrollTo(0, 0)}>Terms And Conditions</li></Link> */}
+
+            {/* Direct PDF links from public folder */}
+            <li>
+              <a
+                href="/Privacypolicy.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a
+                href="/Termsofuse.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Terms and Conditions
+              </a>
+            </li>
           </ul>
+
         </div>
 
         {/* Contact Info */}
