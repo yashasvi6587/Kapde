@@ -5,6 +5,8 @@ import razorpay from "razorpay";
 import shiprocketService from "../services/shipping/shiprocketService.js";
 import { mapOrderToShiprocket } from "../utils/shiprocketMapper.js";
 import crypto from "crypto";
+import { sendOrderToQikink } from "../config/qikink.js";
+
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -34,7 +36,21 @@ const placeOrder = async (req, res) => {
 
     const newOrder = new orderModel(orderData);
     await newOrder.save();
+    try {
+  const qikinkResponse = await sendOrderToQikink(newOrder);
+  console.log("Qikink order created:", qikinkResponse);
 
+  // Optionally store Qikink ka order id apne order doc me:
+  newOrder.shipment = {
+    provider: "qikink",
+    providerOrderId: qikinkResponse?.data?.order_id || null,
+    status: "Order Sent to Qikink",
+    createdAt: Date.now(),
+  };
+  await newOrder.save();
+} catch (err) {
+  console.error("Qikink sync failed:", err.response?.data || err.message);
+}
     await userModel.findByIdAndUpdate(userId, { cartData: {} });
     res.json({ success: true, message: "Order Placed", order: newOrder });
   } catch (error) {

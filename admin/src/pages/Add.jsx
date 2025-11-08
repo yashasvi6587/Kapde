@@ -9,6 +9,8 @@ import { useLocation } from "react-router-dom";
 const Add = ({ token }) => {
   const location = useLocation();
   const product = location.state?.product;
+  const [designCode, setDesignCode] = useState(product ? product.design_code : "DefaultDesign01");
+  const [mockupLink, setMockupLink] = useState(product ? product.mockup_link : "");
 
   const [image1, setImage1] = useState(false);
   const [image2, setImage2] = useState(false);
@@ -45,6 +47,11 @@ const Add = ({ token }) => {
       formData.append("subCategory", subCategory);
       formData.append("bestseller", bestseller);
       formData.append("sizes", JSON.stringify(sizes));
+      formData.append("mockup_link", mockupLink || imagesUrl[0]);
+      formData.append("design_link", designCode || "DefaultDesign01");
+
+
+
 
       image1 && formData.append("image1", image1);
       image2 && formData.append("image2", image2);
@@ -187,6 +194,16 @@ const Add = ({ token }) => {
         />
         <label htmlFor="bestseller">Add To BestSeller</label>
       </div>
+      <div className="text-input">
+        <p>Design Code</p>
+        <input value={designCode} onChange={(e) => setDesignCode(e.target.value)} placeholder="Qikink Design Code" />
+      </div>
+
+      <div className="text-input">
+        <p>Mockup Link (Cloudinary URL)</p>
+        <input value={mockupLink} onChange={(e) => setMockupLink(e.target.value)} placeholder="First image URL" />
+      </div>
+
 
       {/* Submit */}
       <button type="submit" className="submit-button">

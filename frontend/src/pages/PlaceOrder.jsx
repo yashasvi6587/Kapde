@@ -89,11 +89,18 @@ const PlaceOrder = () => {
             if (itemInfo) {
               itemInfo.size = item;
               itemInfo.quantity = cartItems[items][item];
+              itemInfo.design_link = itemInfo.design_link || "DefaultDesign01";
+              itemInfo.mockup_link = itemInfo.mockup_link || itemInfo.image?.[0] || "";
+              itemInfo.placement_sku = itemInfo.placement_sku || "fr"; // ya jo tumhara default SKU ho
+
               orderItems.push(itemInfo);
             }
+
           }
         }
       }
+      console.log(orderItems);
+
 
       let orderData = {
         address: formData,
@@ -160,7 +167,7 @@ const PlaceOrder = () => {
             "firstName",
             "lastName",
             "email",
-            "address",
+            "street",
             "city",
             "state",
             "zipCode",
@@ -187,9 +194,8 @@ const PlaceOrder = () => {
         <h2 className="form-title">Payment Method</h2>
         <div className="payment-options">
           <div
-            className={`payment-card ${
-              method === "razorpay" ? "active" : ""
-            }`}
+            className={`payment-card ${method === "razorpay" ? "active" : ""
+              }`}
             onClick={() => setMethod("razorpay")}
           >
             <img src={assets.razorpay_logo} alt="Razorpay" />
@@ -204,7 +210,7 @@ const PlaceOrder = () => {
           </div>
         </div>
 
-        <button type="submit" className="placeorder-btn" onClick={window.scrollTo(0,0)}>
+        <button type="submit" className="placeorder-btn" onClick={window.scrollTo(0, 0)}>
           Place Order
         </button>
       </form>

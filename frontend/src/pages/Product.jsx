@@ -14,7 +14,6 @@ const Product = () => {
   const [productData, setProductData] = useState(null)
   const [selectedImage, setSelectedImage] = useState(null)
   const [size, setSize] = useState('')
-  const [color, setColor] = useState('black')
 
   useEffect(() => {
     const foundProduct = products.find(p => p._id === productId)
@@ -26,14 +25,7 @@ const Product = () => {
   }, [productId, products])
 
   // 🔹 Automatically change main image based on color selection
-  useEffect(() => {
-    if (productData) {
-      const colorIndex = ['black', 'white', 'red', 'green'].indexOf(color)
-      if (colorIndex !== -1 && productData.image[colorIndex]) {
-        setSelectedImage(productData.image[colorIndex])
-      }
-    }
-  }, [color, productData])
+
 
   const calculateDiscount = (price, cutprice) => {
     if (!cutprice || cutprice <= price) return 0
@@ -127,19 +119,8 @@ const Product = () => {
             )}
           </div>
 
-          {/* --- COLORS --- */}
-          <div className="color-section">
-            <p className="bold">Choose Color:</p>
-            <div className="color-options">
-              {['black', 'white', 'red', 'green'].map((clr, i) => (
-                <div
-                  key={i}
-                  className={`color-circle ${clr} ${color === clr ? 'active' : ''}`}
-                  onClick={() => setColor(clr)}
-                />
-              ))}
-            </div>
-          </div>
+
+        
 
           {/* --- SIZES --- */}
           <div className="size-section">
