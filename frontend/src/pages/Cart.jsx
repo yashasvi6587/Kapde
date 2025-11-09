@@ -15,14 +15,18 @@ const Cart = () => {
   useEffect(() => {
     if (products.length > 0) {
       const tempData = []
-      for (const items in cartItems) {
-        for (const item in cartItems[items]) {
-          if (cartItems[items][item] > 0) {
-            tempData.push({
-              _id: items,
-              size: item,
-              quantity: cartItems[items][item]
-            })
+      for (const productId in cartItems) {
+        for (const size in cartItems[productId]) {
+          for (const color in cartItems[productId][size]) {
+            const quantity = cartItems[productId][size][color]
+            if (quantity > 0) {
+              tempData.push({
+                _id: productId,
+                size,
+                color,
+                quantity
+              })
+            }
           }
         }
       }
@@ -75,6 +79,7 @@ const Cart = () => {
                       <p className="product-name">{productsData.name}</p>
                       <p className="product-price">{currency}{productsData.price}</p>
                       <p className="product-size">Size: <strong>{item.size}</strong></p>
+                      <p className="product-size">Colour: <strong>{item.color}</strong></p>
                     </div>
                   </div>
                   <div className="cart-actions">
@@ -82,18 +87,20 @@ const Cart = () => {
                       onChange={(e) =>
                         e.target.value === '' || e.target.value === '0'
                           ? null
-                          : updateQuantity(item._id, item.size, Number(e.target.value))
+                          : updateQuantity(item._id, item.size, item.color, Number(e.target.value))
                       }
                       type="number"
                       min={1}
                       defaultValue={item.quantity}
                     />
+
                     <img
-                      onClick={() => updateQuantity(item._id, item.size, 0)}
+                      onClick={() => updateQuantity(item._id, item.size, item.color, 0)}
                       src={assets.bin_icon}
                       alt="Delete"
                       className="delete-icon"
                     />
+
                   </div>
                 </div>
               )

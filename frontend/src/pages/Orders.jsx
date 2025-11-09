@@ -73,6 +73,7 @@ const Orders = () => {
                   <p className="product-name"><b>{item.name}</b></p>
                   <p>{currency}{item.price} × {item.quantity}</p>
                   <p>Size: <span>{item.size}</span></p>
+                  <p>Colour: <span>{item.color}</span></p>
                   <p>Date: <span>{new Date(item.date).toDateString()}</span></p>
                   <p>Payment: <span>{item.paymentMethod}</span></p>
                 </div>

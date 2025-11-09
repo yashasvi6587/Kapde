@@ -80,25 +80,28 @@ const PlaceOrder = () => {
 
     try {
       let orderItems = [];
-      for (const items in cartItems) {
-        for (const item in cartItems[items]) {
-          if (cartItems[items][item] > 0) {
-            const itemInfo = structuredClone(
-              products.find((product) => product._id === items)
-            );
-            if (itemInfo) {
-              itemInfo.size = item;
-              itemInfo.quantity = cartItems[items][item];
-              itemInfo.design_link = itemInfo.design_link || "DefaultDesign01";
-              itemInfo.mockup_link = itemInfo.mockup_link || itemInfo.image?.[0] || "";
-              itemInfo.placement_sku = itemInfo.placement_sku || "fr"; // ya jo tumhara default SKU ho
-
-              orderItems.push(itemInfo);
+      for (const productId in cartItems) {
+        for (const size in cartItems[productId]) {
+          for (const color in cartItems[productId][size]) {
+            const quantity = cartItems[productId][size][color];
+            if (quantity > 0) {
+              const itemInfo = structuredClone(
+                products.find((p) => p._id === productId)
+              );
+              if (itemInfo) {
+                itemInfo.size = size;
+                itemInfo.color = color;
+                itemInfo.quantity = quantity;
+                itemInfo.design_link = itemInfo.design_link || "DefaultDesign01";
+                itemInfo.mockup_link = itemInfo.mockup_link || itemInfo.image?.[0] || "";
+                itemInfo.placement_sku = itemInfo.placement_sku || "fr";
+                orderItems.push(itemInfo);
+              }
             }
-
           }
         }
       }
+
       console.log(orderItems);
 
 

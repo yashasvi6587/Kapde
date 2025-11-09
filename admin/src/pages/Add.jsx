@@ -26,10 +26,16 @@ const Add = ({ token }) => {
   const [subCategory, setSubCategory] = useState(product ? product.subCategory : "Feelings");
   const [bestseller, setBestseller] = useState(product ? product.bestseller : false);
   const [sizes, setSizes] = useState(product ? product.sizes : []);
+  const [colour, setColour] = useState(product ? product.colour : []);
 
   const toggleSize = (size) => {
     setSizes((prev) =>
       prev.includes(size) ? prev.filter((item) => item !== size) : [...prev, size]
+    );
+  };
+  const toggleColor = (color) => {
+    setColour((prev) =>
+      prev.includes(color) ? prev.filter((item) => item !== color) : [...prev, color]
     );
   };
 
@@ -47,6 +53,7 @@ const Add = ({ token }) => {
       formData.append("subCategory", subCategory);
       formData.append("bestseller", bestseller);
       formData.append("sizes", JSON.stringify(sizes));
+      formData.append("colour", JSON.stringify(colour));
       formData.append("mockup_link", mockupLink || imagesUrl[0]);
       formData.append("design_link", designCode || "DefaultDesign01");
 
@@ -180,6 +187,18 @@ const Add = ({ token }) => {
             className={sizes.includes(size) ? "selected" : ""}
           >
             <p>{size}</p>
+          </div>
+        ))}
+      </div>
+      <div className="size-selection">
+        <p>Available Colour</p>
+        {["Black", "White", "Red", "Green"].map((color, index) => (
+          <div
+            onClick={() => toggleColor(color)}
+            key={index}
+            className={colour.includes(color) ? "selected" : ""}
+          >
+            <p>{color}</p>
           </div>
         ))}
       </div>
