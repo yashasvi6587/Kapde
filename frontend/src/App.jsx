@@ -18,7 +18,9 @@ import Verify from './pages/Verify'
 import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
 import ShippingPolicy from './pages/ShippingPolicy'
-import RefundPolicy from './pages/RefundPolicy'
+import TermsAndConditions from './pages/TermsAndConditions'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import CancellationAndRefundPolicy from './pages/CancellationAndRefundPolicy'
 
 
 const App = () => {
@@ -39,9 +41,11 @@ const App = () => {
         <Route path='/orders' element={<Orders/>}  />
         <Route path='/verify' element={<Verify/>}  />
         <Route path='/forgot-password' element={<ForgotPassword/>}/>
-        <Route path='/shipping-policy' element={<ShippingPolicy/>}/>
-        <Route path='/refund-policy' element={<RefundPolicy/>}/>
         <Route path='/reset-password' element={<ResetPassword/>}/>
+        <Route path='/shippingpolicy' element={<ShippingPolicy/>}/>
+        <Route path='/termsandconditions' element={<TermsAndConditions/>}/>
+        <Route path='/privacypolicy' element={<PrivacyPolicy/>}/>
+        <Route path='/cancellationandrefundpolicy' element={<CancellationAndRefundPolicy/>}/>
       </Routes>
       <Footer/>
     </div>
