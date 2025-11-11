@@ -82,25 +82,31 @@ const PlaceOrder = () => {
       let orderItems = [];
       for (const productId in cartItems) {
         for (const size in cartItems[productId]) {
-          for (const color in cartItems[productId][size]) {
-            const quantity = cartItems[productId][size][color];
-            if (quantity > 0) {
-              const itemInfo = structuredClone(
-                products.find((p) => p._id === productId)
-              );
-              if (itemInfo) {
-                itemInfo.size = size;
-                itemInfo.color = color;
-                itemInfo.quantity = quantity;
-                itemInfo.design_link = itemInfo.design_link || "DefaultDesign01";
-                itemInfo.mockup_link = itemInfo.mockup_link || itemInfo.image?.[0] || "";
-                itemInfo.placement_sku = itemInfo.placement_sku || "fr";
-                orderItems.push(itemInfo);
+          const quantity = cartItems[productId][size];
+          if (quantity > 0) {
+            const itemInfo = structuredClone(products.find((p) => p._id === productId));
+            if (itemInfo) {
+              itemInfo.size = size;
+              itemInfo.quantity = quantity;
+              itemInfo.design_link = itemInfo.design_link || "DefaultDesign01";
+              itemInfo.mockup_link = itemInfo.mockup_link || itemInfo.image?.[0] || "";
+              itemInfo.placement_sku = itemInfo.placement_sku || "fr";
+
+              // 🔥 size-based SKU fetch:
+              if (itemInfo.sku) {
+                itemInfo.sku = `${itemInfo.sku}-${size}`; // e.g. MStRnHs-Bk-XXL
+              } else {
+                itemInfo.sku = `DefaultSKU-${size}`;
               }
+
+
+              orderItems.push(itemInfo);
             }
+
           }
         }
       }
+
 
       console.log(orderItems);
 

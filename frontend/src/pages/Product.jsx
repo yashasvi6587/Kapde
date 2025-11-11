@@ -14,7 +14,6 @@ const Product = () => {
   const [productData, setProductData] = useState(null)
   const [selectedImage, setSelectedImage] = useState(null)
   const [size, setSize] = useState('')
-  const [color, setColor] = useState('')
 
   useEffect(() => {
     const foundProduct = products.find(p => p._id === productId)
@@ -138,20 +137,6 @@ const Product = () => {
               ))}
             </div>
           </div>
-          <div className="size-section">
-            <p className="bold">Select Colour:</p>
-            <div className="size-options">
-              {productData.colour.map((c, i) => (
-                <button
-                  key={i}
-                  onClick={() => setColor(c)}
-                  className={color === c ? 'active' : ''}
-                >
-                  {c}
-                </button>
-              ))}
-            </div>
-          </div>
 
           {/* --- ACTIONS --- */}
           <div className="actions">
@@ -161,8 +146,7 @@ const Product = () => {
               className="add-cart"
               onClick={() => {
                 if (!size) return toast.error('Please select a size.')
-                if (!color) return toast.error('Please select a Colour.')
-                addToCart(productData._id, size, color)
+                addToCart(productData._id, size)
                 navigate('/cart')
                 window.scrollTo({ top: 0, behavior: 'smooth' })
               }}

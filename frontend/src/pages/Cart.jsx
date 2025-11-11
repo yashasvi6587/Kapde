@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom'
 import '../Styles/Cart.css'
 import CartOfferBanner from '../components/CartOfferBanner';
 
-
 const Cart = () => {
   const { token, products, currency, cartItems, updateQuantity } = useContext(ShopContext)
   const [cartData, setCartData] = useState([])
@@ -17,16 +16,13 @@ const Cart = () => {
       const tempData = []
       for (const productId in cartItems) {
         for (const size in cartItems[productId]) {
-          for (const color in cartItems[productId][size]) {
-            const quantity = cartItems[productId][size][color]
-            if (quantity > 0) {
-              tempData.push({
-                _id: productId,
-                size,
-                color,
-                quantity
-              })
-            }
+          const quantity = cartItems[productId][size]
+          if (quantity > 0) {
+            tempData.push({
+              _id: productId,
+              size,
+              quantity
+            })
           }
         }
       }
@@ -79,7 +75,6 @@ const Cart = () => {
                       <p className="product-name">{productsData.name}</p>
                       <p className="product-price">{currency}{productsData.price}</p>
                       <p className="product-size">Size: <strong>{item.size}</strong></p>
-                      <p className="product-size">Colour: <strong>{item.color}</strong></p>
                     </div>
                   </div>
                   <div className="cart-actions">
@@ -87,7 +82,7 @@ const Cart = () => {
                       onChange={(e) =>
                         e.target.value === '' || e.target.value === '0'
                           ? null
-                          : updateQuantity(item._id, item.size, item.color, Number(e.target.value))
+                          : updateQuantity(item._id, item.size, Number(e.target.value))
                       }
                       type="number"
                       min={1}
@@ -95,19 +90,18 @@ const Cart = () => {
                     />
 
                     <img
-                      onClick={() => updateQuantity(item._id, item.size, item.color, 0)}
+                      onClick={() => updateQuantity(item._id, item.size, 0)}
                       src={assets.bin_icon}
                       alt="Delete"
                       className="delete-icon"
                     />
-
                   </div>
                 </div>
               )
             })}
           </div>
-          <CartOfferBanner totalItems={cartData.reduce((sum, i) => sum + i.quantity, 0)} />
 
+          <CartOfferBanner totalItems={cartData.reduce((sum, i) => sum + i.quantity, 0)} />
 
           <div className="checkout-section zoom-in">
             <button
