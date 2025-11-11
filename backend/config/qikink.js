@@ -88,13 +88,37 @@ import axios from "axios";
 const QIKINK_CLIENT_ID = process.env.QIKINK_CLIENT_ID;
 const QIKINK_CLIENT_SECRET = process.env.QIKINK_CLIENT_SECRET;
 
-const QIKINK_AUTH_URL = "https://sandbox.qikink.com/api/token";
-const QIKINK_ORDER_URL = "https://sandbox.qikink.com/api/order/create";
+const QIKINK_AUTH_URL = "https://api.qikink.com/api/token";
+const QIKINK_ORDER_URL = "https://api.qikink.com/api/order/create";
 
 /**
  * Send order to Qikink using real data
  * @param {Object} order - full order document from MongoDB
+ * 
+ * 
  */
+
+const getToken = async () => {
+  try {
+    const res = await axios.post(
+      QIKINK_AUTH_URL,
+
+      new URLSearchParams({
+        ClientId: process.env.QIKINK_CLIENT_ID,
+        client_secret: process.env.QIKINK_CLIENT_SECRET,
+      }),
+      { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
+    );
+    console.log(res.data);
+  } catch (err) {
+    console.error(err.response?.data || err.message);
+  }
+};
+
+getToken();
+
+
+
 export const sendOrderToQikink = async (order) => {
   try {
     // Step 1️⃣: Authenticate with Qikink
@@ -121,7 +145,7 @@ export const sendOrderToQikink = async (order) => {
         quantity: String(item.quantity || 1),
         price: String(item.price || order.amount || 0),
         print_type_id: "1",
-        sku: "MStRnHs-Bk-XL",
+        sku: "MStRnHs-Bk-M",
         designs: [
           {
             width_inches: "",
