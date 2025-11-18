@@ -65,9 +65,9 @@ export const sendOrderToQikink = async (order) => {
         sku: item.sku || "DefaultSKU",
         designs: [
           {
-            width_inches: "",
-            height_inches: "",
-            design_code: "SUNDAZE" || "DefaultDesign01",
+            width_inches: item.width_inches,
+            height_inches: item.height_inches,
+            design_code: "Design",
             placement_sku: item.placement_sku || "fr",
             design_link: item.design_link || "",
             mockup_link: item.mockup_link || "",

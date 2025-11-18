@@ -9,7 +9,7 @@ import { useLocation } from "react-router-dom";
 const Add = ({ token }) => {
   const location = useLocation();
   const product = location.state?.product;
-  const [designCode, setDesignCode] = useState(product ? product.design_code : "DefaultDesign01");
+  const [designlink, setDesignlink] = useState(product ? product.design_link : "");
   const [mockupLink, setMockupLink] = useState(product ? product.mockup_link : "");
 
   const [image1, setImage1] = useState(false);
@@ -27,6 +27,8 @@ const Add = ({ token }) => {
   const [bestseller, setBestseller] = useState(product ? product.bestseller : false);
   const [sizes, setSizes] = useState(product ? product.sizes : []);
   const [sku, setSku] = useState(product ? product.sku : "");
+  const [width_inches, setWidth_inches] = useState(product ? product.width_inches : "");
+  const [height_inches, setHeight_inches] = useState(product ? product.height_inches : "");
 
 
 
@@ -51,8 +53,10 @@ const Add = ({ token }) => {
       formData.append("bestseller", bestseller);
       formData.append("sizes", JSON.stringify(sizes));
       formData.append("mockup_link", mockupLink || imagesUrl[0]);
-      formData.append("design_link", designCode || "DefaultDesign01");
+      formData.append("design_link", designlink || "");
       formData.append("sku", sku);
+      formData.append("width_inches", width_inches);
+      formData.append("height_inches", height_inches);
 
 
 
@@ -148,9 +152,9 @@ const Add = ({ token }) => {
         <div>
           <p>Sub Category</p>
           <select onChange={(e) => setSubCategory(e.target.value)} value={subCategory}>
-            <option value="Feelings">Feelings</option>
-            <option value="Plain">Plain</option>
-            <option value="Casual">Casual</option>
+            <option value="Winter">Winter</option>
+            <option value="Summer">Summer</option>
+            {/* <option value="Casual">Casual</option> */}
           </select>
         </div>
       </div>
@@ -172,6 +176,14 @@ const Add = ({ token }) => {
         <div>
           <p>Rating Count</p>
           <input value={rating} onChange={(e) => setRating(e.target.value)} type="number" placeholder="e.g. 120" />
+        </div>
+        <div>
+          <p>Width Inches</p>
+          <input value={width_inches} onChange={(e) => setWidth_inches(e.target.value)} type="number" placeholder="e.g. 120" />
+        </div>
+        <div>
+          <p>Height Inches</p>
+          <input value={height_inches} onChange={(e) => setHeight_inches(e.target.value)} type="number" placeholder="e.g. 120" />
         </div>
       </div>
 
@@ -212,8 +224,8 @@ const Add = ({ token }) => {
         <label htmlFor="bestseller">Add To BestSeller</label>
       </div>
       <div className="text-input">
-        <p>Design Code</p>
-        <input value={designCode} onChange={(e) => setDesignCode(e.target.value)} placeholder="Qikink Design Code" />
+        <p>Design Link</p>
+        <input value={designlink} onChange={(e) => setDesignlink(e.target.value)} placeholder="Qikink Design Link" />
       </div>
 
       <div className="text-input">

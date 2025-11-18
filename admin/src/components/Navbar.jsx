@@ -6,7 +6,7 @@ const Navbar = ({ setToken }) => {
   return (
     <nav className="admin-navbar">
       <div className="navbar-left ">
-        <p>KAPDE</p>
+        <p>KESHAV</p>
         <span className="navbar-title">Admin Dashboard</span>
       </div>
       <button className="logout-btn" onClick={() => setToken('')}>

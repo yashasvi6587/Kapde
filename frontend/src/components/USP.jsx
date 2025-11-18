@@ -4,7 +4,7 @@ import { FaShippingFast, FaUndoAlt, FaCheckCircle, FaLock } from "react-icons/fa
 
 const USP = () => {
   const usps = [
-    { icon: <FaShippingFast />, title: "Free Shipping", desc: "On all orders above ₹999" },
+    { icon: <FaShippingFast />, title: "Fast Shipping", desc: "On all the orders " },
     { icon: <FaUndoAlt />, title: "Easy Returns", desc: "30-day hassle-free returns" },
     { icon: <FaCheckCircle />, title: "100% Quality", desc: "Premium quality guaranteed" },
     { icon: <FaLock />, title: "Secure Payment", desc: "Safe & secure checkout" },

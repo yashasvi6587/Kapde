@@ -18,16 +18,20 @@ const Hero = () => {
 
       {/* Left Content */}
       <div className="hero-left">
-        <h4 className="hero-subtitle">KAPDE - ASSETS - T - SHIRTS</h4>
+        <h4 className="hero-subtitle">KESHAV - ASSETS </h4>
 
         <div className="social-links">
           <p>Social Community :</p>
           <ul>
-            <li> <a href="https://wa.me/+919456009776" target="_blank" rel="noopener noreferrer">WHATS APP</a></li>
+            {/* <li> <a href="https://wa.me/+919456009776" target="_blank" rel="noopener noreferrer">WHATS APP</a></li> */}
             {/* <li>YOUTUBE</li> */}
-            <li><a href="https://www.instagram.com/kapde.storeofficial?igsh=MXh5cGxqcXVtN2t1eA==" target="_blank" rel="noopener noreferrer">INSTAGRAM</a></li>
+            {/* <li><a href="https://www.instagram.com/kapde.storeofficial?igsh=MXh5cGxqcXVtN2t1eA==" target="_blank" rel="noopener noreferrer">INSTAGRAM</a></li> */}
+            <li> <a href="https://wa.me/+917827747125" target="_blank" rel="noopener noreferrer">WHATS APP</a></li>
+            <li><a href="https://www.instagram.com/keshav125573/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a></li>
+            {/* <li>YOUTUBE</li> */}
           </ul>
-          <p className="phone">+91 - 9456009776</p>
+          {/* <p className="phone">+91 - 9456009776</p> */}
+          <p className="phone">+91-7827747125</p>
         </div>
       </div>
 
@@ -36,7 +40,7 @@ const Hero = () => {
         <p className="hero-tagline">
           Redefining streetwear with bold, functional, and timeless designs.
         </p>
-        <h1 className="brand-title">KAPDE</h1>
+        <h1 className="brand-title">KESHAV</h1>
         <div className="hero-buttons">
           <Link to={"/collection"}><button className="hero-btn">Browse Collection</button></Link>
           <Link to={"/collection"}><button className="hero-btn">Shop Now</button></Link>
@@ -60,7 +64,8 @@ const Hero = () => {
       {/* Bottom Bar */}
       <div className="hero-bottom">
         <p>FOR EVERYONE <span>MADE WITH CARE</span></p>
-        <p className="hashtag">#KAPDE</p>
+        {/* <p className="hashtag">#KAPDE</p> */}
+        <p className="hashtag">#KESHAV</p>
         <p>FOR EVERY STYLE <span>BUILT FOR COMFORT</span></p>
       </div>
     </section>

@@ -50,11 +50,11 @@ const Navbar = () => {
       <div className="main-navbar">
         <Link to="/" className="logo">
           <img
-            src={assets.logo}
+            src={assets.logo2}
             alt="Kapde Logo"
             className="logo-img"
           />
-          KAPDE
+          KESHAV
         </Link>
 
 
@@ -124,7 +124,7 @@ const Navbar = () => {
       {/* Category Navbar */}
       <div className="category-navbar">
         <div className="category-group">
-          {['Feelings', 'Plain', 'Casual'].map((item) => (
+          {['Winter', 'Summer'].map((item) => (
             <div key={item}>
               <Link to={`/collection?subCategory=${encodeURIComponent(item)}`}>
                 <p className="category-item">{item}</p>

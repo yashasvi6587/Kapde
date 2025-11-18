@@ -89,6 +89,8 @@ import feeling from "./feeling.png"
 import casual from "./casual.png"
 import plain from "./plain.png"
 
+import logo2 from "./logo2.png"
+
 
 export const assets = {
     logo,
@@ -128,7 +130,8 @@ export const assets = {
     testimonial2,
     feeling,
     plain,
-    casual
+    casual,
+    logo2
 }
 
 

@@ -45,11 +45,11 @@ const Footer = () => {
         <div className="footer-section about">
           <div className="footer-logo">
             <img
-              src={assets.logo}
+              src={assets.logo2}
               alt="Kapde Logo"
               className="footer-logo-img"
             />
-            <span>KAPDE</span>
+            <span>KESHAV</span>
           </div>
 
           <p className="footer-desc">
@@ -89,15 +89,18 @@ const Footer = () => {
             </li>
             <li>
               <FaEnvelope className="footer-icon" />
-              <span>Storekapde@gmail.com</span>
+              {/* <span>Storekapde@gmail.com</span> */}
+              <span>keshav125573@gmail.com</span>
             </li>
             <li>
               <FaUserTie className="footer-icon" />
               <span>We’re always looking for passionate individuals. Reach out to join our journey!</span>
             </li>
             <li className="social-icons">
-              <a href="https://wa.me/+919456009776" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
-              <a href="https://www.instagram.com/kapde.storeofficial?igsh=MXh5cGxqcXVtN2t1eA==" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+              {/* <a href="https://wa.me/+919456009776" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a> */}
+              {/* <a href="https://www.instagram.com/kapde.storeofficial?igsh=MXh5cGxqcXVtN2t1eA==" target="_blank" rel="noopener noreferrer"><FaInstagram /></a> */}
+              <a href="https://wa.me/+917827747125" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
+              <a href="https://www.instagram.com/keshav125573/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
               {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter/></a> */}
               {/* <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><FaYoutube/></a> */}
             </li>
@@ -119,7 +122,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="footer-bottom">
-        © 2025 kapde.store – All Rights Reserved.
+        © 2025 keshav.com – All Rights Reserved.
       </div>
     </div>
   );

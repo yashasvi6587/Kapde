@@ -9,21 +9,21 @@ import jacketImg3 from '../assets/casual.png';
 
 const products = [
   {
-    title: 'Family',
+    title: 'Coloured',
     description:
       'Explore the fascinating history behind every piece in this unique collection. Each item is a conversation starter, perfect for those who appreciate a story as much as they appreciate quality craftsmanship. ',
     image: jacketImg1,
     cta: 'Discover Now',
   },
   {
-    title: 'Plain',
+    title: 'White',
     description:
       'Unveil a fascinating new you with this revolutionary skincare formula. It’s designed to transform your complexion, leaving you with a flawless, radiant glow. Experience the magic as your skin’s natural beauty comes to life.',
     image: jacketImg2,
     cta: 'Discover Now',
   },
   {
-    title: 'Casual',
+    title: 'Black',
     description:
       'This amazing wall art brings a touch of modern abstraction to any space. Its intricate patterns & dynamic colors will captivate every guest. Add this unique product to your home & make a truly unforgettable statement.',
     image: jacketImg3,
@@ -65,8 +65,8 @@ const FeaturedCategories = () => {
               <h3>{product.title}</h3>
               <p>{product.description}</p>
               <div className="category-links">
-                {['Feelings', 'Plain', 'Casual'].map((cat) => (
-                  <Link key={cat} to={`/collection?subCategory=${encodeURIComponent(cat)}`}>
+                {['Coloured', 'White', 'Black'].map((cat) => (
+                  <Link key={cat} to={`/collection?category=${encodeURIComponent(cat)}`}>
                     <span className={`feature-link ${cat === product.title ? 'active-feature' : ''}`}>{cat}</span>
                   </Link>
                 ))}

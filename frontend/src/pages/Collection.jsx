@@ -92,7 +92,7 @@ const Collection = () => {
 
         <div className="filter-section">
           <p>Categories</p>
-          {['Feelings', 'Plain', 'Casual'].map((type, index) => (
+          {['Winter', 'Summer'].map((type, index) => (
             <label key={index}>
               <input
                 type="checkbox"

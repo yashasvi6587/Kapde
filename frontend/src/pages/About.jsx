@@ -17,7 +17,7 @@ const About = () => {
       <div className="about-story">
         <h2 className="section-title">Our Story</h2>
         <p className="fade-in">
-          At <span>KAPDE</span>, we believe fashion is not just about wearing
+          At <span>KESHAV</span>, we believe fashion is not just about wearing
           clothes—it’s about wearing your identity. Our journey started with a
           simple vision: <span>blend comfort, class, and creativity</span>.
         </p>
@@ -57,19 +57,19 @@ const About = () => {
         <div className="team-grid">
           <div className="team-member hover-pop">
             {/* <img src={assets.p_img31} alt="Founder" /> */}
-            <h4>Vaibhav </h4>
+            <h4>Yashasvi Sharma </h4>
             <p>Founder & Visionary</p>
           </div>
-          <div className="team-member hover-pop">
+          {/* <div className="team-member hover-pop"> */}
             {/* <img src={assets.p_img31} alt="Designer" /> */}
-            <h4>Gulshan</h4>
-            <p>Creative Designer</p>
-          </div>
-          <div className="team-member hover-pop">
+            {/* <h4>Gulshan</h4>
+            <p>Creative Designer</p> */}
+          {/* </div> */}
+          {/* <div className="team-member hover-pop"> */}
             {/* <img src={assets.p_img31} alt="Marketing" /> */}
-            <h4>Mayur</h4>
-            <p>Marketing Head</p>
-          </div>
+            {/* <h4>Mayur</h4>
+            <p>Marketing Head</p> */}
+          {/* </div> */}
         </div>
       </div>
 

@@ -88,9 +88,11 @@ const PlaceOrder = () => {
             if (itemInfo) {
               itemInfo.size = size;
               itemInfo.quantity = quantity;
-              itemInfo.design_link = itemInfo.design_link || "DefaultDesign01";
+              itemInfo.design_link = itemInfo.design_link ;
               itemInfo.mockup_link = itemInfo.mockup_link || itemInfo.image?.[0] || "";
               itemInfo.placement_sku = itemInfo.placement_sku || "fr";
+              itemInfo.width_inches = itemInfo.width_inches ;
+              itemInfo.height_inches = itemInfo.height_inches ;
 
               // 🔥 size-based SKU fetch:
               if (itemInfo.sku) {
@@ -202,14 +204,14 @@ const PlaceOrder = () => {
 
         <h2 className="form-title">Payment Method</h2>
         <div className="payment-options">
-          <div
+          {/* <div
             className={`payment-card ${method === "razorpay" ? "active" : ""
               }`}
             onClick={() => setMethod("razorpay")}
           >
             <img src={assets.razorpay_logo} alt="Razorpay" />
-            {/* <span>Razorpay</span> */}
-          </div>
+            <span>Razorpay</span>
+          </div> */}
           <div
             className={`payment-card ${method === "cod" ? "active" : ""}`}
             onClick={() => setMethod("cod")}
