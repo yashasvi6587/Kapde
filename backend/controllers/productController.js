@@ -6,7 +6,7 @@ import productModel from "../models/productModel.js"
 // ADD PRODUCT
 const addProduct = async (req, res) => {
     try {
-        const { name, description, price, category, subCategory, sizes, bestseller, cutprice, star, rating, design_link, mockup_link ,sku,width_inches,height_inches} = req.body;
+        const { name, description, price, category, subCategory, sizes, bestseller, cutprice, star, rating} = req.body;
 
         // images from multer
         const images = ['image1','image2','image3','image4'].map(f => req.files[f]?.[0]).filter(i => i);
@@ -32,11 +32,11 @@ const addProduct = async (req, res) => {
             rating: Number(rating),
 
             // Qikink required
-            mockup_link:mockup_link || imagesUrl[0] || "",
-            design_link: design_link ,
-            sku: sku,
-            width_inches:width_inches,
-            height_inches:height_inches
+            // mockup_link:mockup_link || imagesUrl[0] || "",
+            // design_link: design_link ,
+            // sku: sku,
+            // width_inches:width_inches,
+            // height_inches:height_inches
         };
 
         const product = new productModel(productData);
@@ -51,7 +51,7 @@ const addProduct = async (req, res) => {
 // UPDATE PRODUCT
 const updateProduct = async (req, res) => {
     try {
-        const { id, name, description, price, category, subCategory, sizes,  bestseller, cutprice, star, rating, design_link,sku,width_inches,height_inches } = req.body;
+        const { id, name, description, price, category, subCategory, sizes,  bestseller, cutprice, star, rating} = req.body;
 
         let updateData = {
             name,
@@ -65,10 +65,10 @@ const updateProduct = async (req, res) => {
             cutprice: Number(cutprice),
             star: Number(star),
             rating: Number(rating),
-            design_link: design_link,
-            sku: sku,
-            width_inches:width_inches,
-            height_inches:height_inches
+            // design_link: design_link,
+            // sku: sku,
+            // width_inches:width_inches,
+            // height_inches:height_inches
         };
 
         const images = ['image1','image2','image3','image4'].map(f => req.files[f]?.[0]).filter(i => i);
