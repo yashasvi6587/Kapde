@@ -13,9 +13,9 @@ const productSchema = new mongoose.Schema({
     sizes: { type: Array, required: true },
     bestseller: { type: Boolean },
     date: { type: Number, required: true },
-    mockup_link: { type: String, required: true }, // first image for Qikink
-    design_link: { type: String, required:true },
-    sku: { type: String, required: true }, // e.g. "MStRnHs-Bk"
+    mockup_link: { type: String }, // first image for Qikink
+    design_link: { type: String },
+    sku: { type: String}, // e.g. "MStRnHs-Bk"
     width_inches: {type: Number, required: true},
     height_inches: {type: Number, required: true},
 
